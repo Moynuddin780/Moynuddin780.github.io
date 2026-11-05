@@ -211,7 +211,7 @@ window.PORTFOLIO = {
       stack: ["C++17", "DEEPX DX-M1 NPU (DXRT)", "YOLO26-pose", "SCRFD-10G", "ArcFace MobileFaceNet", "GStreamer", "Drogon", "PostgreSQL 16", "React", "TypeScript", "Docker"],
       image: "assets/img/projects/smart-office.jpg",
       media: [
-        { type: "video", src: "assets/video/smart-office-demo.mp4", poster: "assets/img/projects/smart-office.jpg", label: "Demo video", ratio: "1600 / 836", position: "left top" },
+        { type: "video", src: "assets/video/smart-office-demo.mp4", poster: "assets/img/projects/smart-office.jpg", label: "Demo video", ratio: "1848 / 1006", position: "left top" },
       ],
       links: {},
     },
