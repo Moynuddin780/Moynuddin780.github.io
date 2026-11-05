@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ============================================================
+       SEO & SOCIAL PREVIEW
+       Deploying somewhere other than https://moynuddin780.github.io/ ?
+       Run  scripts/set-site-url.sh https://your-address  — it rewrites these tags.
+       ============================================================ -->
+  <title>Moynuddin Al Masum — AI Engineer (Computer Vision)</title>
+  <meta name="description" content="Moynuddin Al Masum is an AI Engineer (Computer Vision) at SmartData Technologies — real-time face recognition, object counting and tracking on live camera streams, deployed on the DEEPX DX-M1 NPU. Projects, demo videos and résumé." />
+  <meta name="author" content="Moynuddin Al Masum" />
+  <link rel="canonical" href="https://moynuddin780.github.io/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Moynuddin Al Masum — AI Engineer (Computer Vision)" />
+  <meta property="og:description" content="Real-time computer-vision systems on live camera streams and edge NPUs — attendance, smart hall, bag counting. Projects, demo videos and résumé." />
+  <meta property="og:url" content="https://moynuddin780.github.io/" />
+  <meta property="og:image" content="https://moynuddin780.github.io/assets/img/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Moynuddin Al Masum — AI Engineer (Computer Vision)" />
+  <meta name="twitter:image" content="https://moynuddin780.github.io/assets/img/og-image.png" />
+
+  <meta name="theme-color" content="#F6F5F1" />
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+
+  <!-- The site is light by default; only a visitor who chose dark with the toggle gets it back (applied before first paint, so no flash). Also catches typos in data.js -->
+  <script>
+    try { if (localStorage.getItem("theme") === "dark") document.documentElement.setAttribute("data-theme", "dark"); } catch (e) {}
+    window.addEventListener("error", function (e) { if (e.filename && /data\.js/.test(e.filename)) window.__dataError = e; });
+  </script>
+
+  <link rel="preload" href="assets/fonts/Inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="assets/css/fonts.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="site-header"></header>
+  <main id="main"></main>
+  <footer class="site-footer" id="site-footer"></footer>
+
+  <div class="modal" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__panel">
+      <button class="modal__close icon-btn" type="button" data-close aria-label="Close project details"></button>
+      <div class="modal__body" id="modal-body" tabindex="-1"></div>
+    </div>
+  </div>
+
+  <noscript>
+    <p class="noscript">This portfolio needs JavaScript. Contact: moinuddinmasum780@gmail.com</p>
+  </noscript>
+
+  <script src="data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
