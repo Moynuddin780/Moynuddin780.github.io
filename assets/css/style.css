@@ -812,3 +812,15 @@ a.cert:hover { border-color: var(--line-strong); translate: 0 -2px; }
   .explain { grid-template-columns: 1fr; }
   .explain__media { position: static; }
 }
+
+/* ---------- Page frame: a vertical line on each side of the content column, outside area slightly tinted ---------- */
+body { position: relative; --rail-tint: rgba(18, 20, 23, 0.028); }
+:root[data-theme="dark"] body { --rail-tint: rgba(255, 255, 255, 0.025); }
+body::before {
+  content: ""; position: absolute; top: 0; bottom: 0; left: 50%; z-index: 40;
+  width: min(100%, calc(var(--container) + var(--gutter) * 2)); translate: -50% 0;
+  border-inline: 1px solid var(--line-strong);
+  box-shadow: 0 0 0 100vmax var(--rail-tint); clip-path: inset(0 -100vmax);
+  pointer-events: none;
+}
+@media (max-width: 1300px) { body::before { display: none; } }
