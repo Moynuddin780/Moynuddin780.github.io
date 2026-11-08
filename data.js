@@ -285,8 +285,9 @@ window.PORTFOLIO = {
       ],
       metrics: [],
       stack: ["RAG", "FAISS", "SentenceTransformers", "Google Gemini API", "Gradio", "Python"],
-      image: "",
+      image: "assets/img/projects/bup-rag-chatbot.jpg",
       media: [
+        { type: "video", src: "assets/video/bup-rag-chatbot-demo.mp4", poster: "assets/img/projects/bup-rag-chatbot.jpg", label: "Demo video", ratio: "1376 / 728", position: "left top" },
         { type: "linkedin", id: "7382755801192484864", label: "LinkedIn post" },
       ],
       links: {
@@ -309,6 +310,7 @@ window.PORTFOLIO = {
       stack: ["LangChain", "OpenAI GPT-4o-mini", "Prompt engineering", "Gradio", "Python"],
       image: "assets/img/projects/linkedin-post-generator.jpg",
       media: [
+        { type: "video", src: "assets/video/linkedin-post-generator-demo.mp4", poster: "assets/img/projects/linkedin-post-generator.jpg", label: "Demo video", ratio: "960 / 512", position: "left top" },
         { type: "linkedin", id: "7370021032008581120", label: "LinkedIn post" },
       ],
       links: {
