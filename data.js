@@ -77,7 +77,7 @@ window.PORTFOLIO = {
     paragraphs: [
       "I’m an AI Engineer (Computer Vision) at **SmartData Technologies**. I build real-time vision systems that run on live camera streams, and I like owning the whole lifecycle — data, model, optimisation and deployment where people actually use it.",
       "Since joining as an intern in May 2026 and moving to a full-time role in September, I have built four systems on the **DEEPX DX-M1 NPU** in C++ and Docker: a face-recognition attendance engine for university classrooms, a hall-management platform with face-recognition gates and dining cameras, CCPLC, a bag-counting system for conveyor belts, and Smart Office, a multi-tenant office-analytics platform.",
-      "Earlier work spans multi-object tracking and IN/OUT counting from RTSP streams, assistive navigation for visually impaired people, and retrieval-augmented chatbots. Alongside engineering I do applied research in medical AI, including a multi-agent vision-language framework for pediatric pneumonia diagnosis that has been accepted for publication.",
+      "Earlier work spans multi-object tracking and IN/OUT counting from RTSP streams, people-flow analytics, and retrieval-augmented chatbots. Alongside engineering I do applied research in medical AI, including a multi-agent vision-language framework for pediatric pneumonia diagnosis that has been accepted for publication.",
     ],
     facts: [
       { label: "Focus",     value: "Computer Vision · Edge AI · Generative AI" },
@@ -161,30 +161,6 @@ window.PORTFOLIO = {
       ],
       links: {
         github: { url: "https://github.com/Moynuddin780/Real-time-Face-Recognition-Attendance-System", label: "First prototype (source)" },
-      },
-    },
-    {
-      id: "smart-counting",
-      title: "Real-time Object Detection & Smart Counting",
-      category: "Computer Vision",
-      year: "2026",
-      summary: "Live video analytics on IP-CCTV streams — detects students and multiple vehicle types, tracks each one with a stable ID and counts IN/OUT movement in both directions.",
-      description: "A production-oriented video analytics system that reads RTSP streams from IP-CCTV cameras, detects and tracks objects in real time, and keeps bidirectional IN/OUT counts — built for continuous, unattended monitoring.",
-      highlights: [
-        "Ingests live RTSP streams from IP-CCTV cameras for continuous monitoring.",
-        "Custom-trained YOLOv8 model detects students and multiple vehicle classes.",
-        "ByteTrack multi-object tracking keeps IDs stable across frames, enabling reliable bidirectional IN/OUT counting.",
-        "GPU inference optimised with TensorRT for production-ready throughput.",
-      ],
-      metrics: [],
-      stack: ["Ultralytics YOLOv8", "Custom YOLO model", "ByteTrack", "OpenCV", "RTSP streams", "TensorRT"],
-      image: "assets/img/projects/smart-counting.jpg",
-      media: [
-        { type: "video", src: "assets/video/object-detection-demo.mp4", poster: "assets/img/projects/smart-counting.jpg", label: "Demo video", ratio: "1280 / 604", position: "left top" },
-        { type: "linkedin", id: "7429574784050561025", label: "LinkedIn post" },
-      ],
-      links: {
-        linkedin: "https://www.linkedin.com/posts/moynuddin-al-masum-683102375_computervision-yolo-objectdetection-activity-7429574784050561025-B5Sb",
       },
     },
     {
@@ -272,6 +248,30 @@ window.PORTFOLIO = {
       links: {},
     },
     {
+      id: "smart-counting",
+      title: "Real-time Object Detection & Smart Counting",
+      category: "Computer Vision",
+      year: "2026",
+      summary: "Live video analytics on IP-CCTV streams — detects students and multiple vehicle types, tracks each one with a stable ID and counts IN/OUT movement in both directions.",
+      description: "A production-oriented video analytics system that reads RTSP streams from IP-CCTV cameras, detects and tracks objects in real time, and keeps bidirectional IN/OUT counts — built for continuous, unattended monitoring.",
+      highlights: [
+        "Ingests live RTSP streams from IP-CCTV cameras for continuous monitoring.",
+        "Custom-trained YOLOv8 model detects students and multiple vehicle classes.",
+        "ByteTrack multi-object tracking keeps IDs stable across frames, enabling reliable bidirectional IN/OUT counting.",
+        "GPU inference optimised with TensorRT for production-ready throughput.",
+      ],
+      metrics: [],
+      stack: ["Ultralytics YOLOv8", "Custom YOLO model", "ByteTrack", "OpenCV", "RTSP streams", "TensorRT"],
+      image: "assets/img/projects/smart-counting.jpg",
+      media: [
+        { type: "video", src: "assets/video/object-detection-demo.mp4", poster: "assets/img/projects/smart-counting.jpg", label: "Demo video", ratio: "1280 / 604", position: "left top" },
+        { type: "linkedin", id: "7429574784050561025", label: "LinkedIn post" },
+      ],
+      links: {
+        linkedin: "https://www.linkedin.com/posts/moynuddin-al-masum-683102375_computervision-yolo-objectdetection-activity-7429574784050561025-B5Sb",
+      },
+    },
+    {
       id: "bup-rag-chatbot",
       title: "BUP RAG Chatbot",
       category: "Generative AI",
@@ -339,49 +339,6 @@ window.PORTFOLIO = {
       ],
       links: {
         github: "https://github.com/Moynuddin780/People-Flow-Detection-using-Object-Tracking",
-      },
-    },
-    {
-      id: "home-security",
-      title: "Real-time AI Home Security System",
-      category: "Computer Vision",
-      year: "2026",
-      summary: "Smart surveillance that recognises family members, flags unknown people, sounds an alarm and sends instant Telegram alerts with the intruder’s photo.",
-      description: "A home-security pipeline that watches a webcam or IP camera, tells registered family members from strangers and escalates the moment an unknown person appears.",
-      highlights: [
-        "Real-time face recognition with InsightFace on webcam or IP-camera feeds.",
-        "Separates registered family members from unknown persons.",
-        "Triggers an audible alarm and pushes Telegram notifications with captured intruder photos.",
-        "Multithreaded pipeline keeps capture, recognition and alerting responsive.",
-      ],
-      metrics: [],
-      stack: ["InsightFace", "OpenCV", "Telegram Bot API", "Multithreading", "Python"],
-      image: "",
-      media: [],
-      links: {
-        github: "https://github.com/Moynuddin780/Real-Time-AI-Home-Security-System",
-      },
-    },
-    {
-      id: "blind-navigation",
-      title: "Blind Navigation Hybrid AI System",
-      category: "Computer Vision",
-      year: "2025",
-      summary: "Assistive navigation for visually impaired people — detects roads, obstacles, potholes and stairs, estimates distance, and gives continuous spoken guidance toward a destination.",
-      description: "A hybrid computer-vision pipeline that merges object detection, depth estimation and walkable-area segmentation into prioritised voice instructions such as “Pothole ahead, stop!” or “Move slightly left”. Designed to run on mid-range hardware.",
-      highlights: [
-        "Pretrained YOLOv8 combined with custom-trained classes for footpaths, potholes, stairs, wet floors and construction obstacles.",
-        "Monocular depth estimation (MiDaS / ZoeDepth) warns users when obstacles are close.",
-        "Walkable-area segmentation to find the safest path forward.",
-        "Voice interface: speech-to-text for commands, text-to-speech for real-time guidance.",
-        "A logic engine merges detections, depth and route information into timely, prioritised instructions.",
-      ],
-      metrics: [],
-      stack: ["YOLOv8", "Custom object detection", "MiDaS / ZoeDepth", "OpenCV", "Speech-to-Text", "Text-to-Speech", "Python"],
-      image: "",
-      media: [],
-      links: {
-        github: "https://github.com/Moynuddin780/Blind-Human-Navigation-Hybrid-AI-System",
       },
     },
   ],
