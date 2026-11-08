@@ -1,7 +1,7 @@
 /* ==========================================================================
    Portfolio renderer
    Reads window.PORTFOLIO (from data.js) and builds the whole page.
-   You normally never need to edit this file — edit data.js instead.
+   You normally never need to edit this file, edit data.js instead.
    ========================================================================== */
 (() => {
   "use strict";
@@ -106,7 +106,7 @@
       work: "Selected *work*.",
       workIntro: "Real-time systems I’ve designed, trained and deployed. Open any project for the demo video and the full breakdown.",
       explainer: "Tracking, *explained*.",
-      explainerIntro: "A walk-through I recorded on how a tracker remembers what it has seen — so the same person keeps the same ID from one frame to the next.",
+      explainerIntro: "A walk-through I recorded on how a tracker remembers what it has seen, so the same person keeps the same ID from one frame to the next.",
       research: "Research & *publications*.",
       researchIntro: "Applied AI research, with a focus on healthcare.",
       expertise: "The *toolkit*.",
@@ -155,7 +155,7 @@
   const cardPoster = (p, media) => (media.find((m) => has(m.poster)) || {}).poster || p.image || "";
 
   /* ======================================================================
-     SECTION BUILDERS — each returns null when there is nothing to show
+     SECTION BUILDERS, each returns null when there is nothing to show
      ====================================================================== */
 
   function tags(items, max) {
@@ -503,7 +503,7 @@
           .map(
             (a) => `<li class="row row--compact" data-reveal>
             <p class="row__side">${esc(a.year)}</p>
-            <div class="row__main"><p class="row__sub"><strong>${esc(a.title)}</strong>${has(a.detail) ? ` — ${md(a.detail)}` : ""}</p></div>
+            <div class="row__main"><p class="row__sub"><strong>${esc(a.title)}</strong>${has(a.detail) ? `, ${md(a.detail)}` : ""}</p></div>
           </li>`
           )
           .join("")}</ol>`
@@ -559,7 +559,7 @@
   function stage(m) {
     if (!m) return "";
     if (m.kind === "video") {
-      // Opens already playing (silently) — the browser’s controls are there to unmute, pause or go full screen
+      // Opens already playing (silently), the browser’s controls are there to unmute, pause or go full screen
       return `<div class="stage stage--video"${ratio(m)}><video controls playsinline preload="metadata"${reduceMotion ? "" : " autoplay muted"}${has(m.poster) ? ` poster="${href(m.poster)}"` : ""}><source src="${href(m.src)}" type="video/mp4" />Your browser can’t play this video.</video></div>`;
     }
     if (m.kind === "linkedin") {
@@ -621,7 +621,7 @@
   function certDetail(c) {
     const file = has(c.file) ? c.file : c.url;
     return `<div class="doc">
-      ${has(c.preview) ? `<a class="doc__preview" href="${href(file)}" target="_blank" rel="noopener" title="Open the PDF"><img src="${href(c.preview)}" alt="${esc(c.name)} — ${esc(c.issuer)}" /></a>` : ""}
+      ${has(c.preview) ? `<a class="doc__preview" href="${href(file)}" target="_blank" rel="noopener" title="Open the PDF"><img src="${href(c.preview)}" alt="${esc(c.name)}, ${esc(c.issuer)}" /></a>` : ""}
       <div class="doc__info detail">
         <p class="detail__meta"><span class="card__num">Certificate</span>${has(c.year) ? `<span>${esc(c.year)}</span>` : ""}</p>
         <h2 class="detail__title" id="modal-title">${esc(c.name)}</h2>
@@ -755,7 +755,7 @@
     };
     const sync = (v) => {
       if (seen.has(v) && !held && !document.hidden) {
-        if (v.dataset.user) return; // the visitor paused it themselves — leave it alone
+        if (v.dataset.user) return; // the visitor paused it themselves, leave it alone
         if (!v.getAttribute("src") && v.dataset.src) v.src = v.dataset.src;
         v.muted = true;
         const run = v.play();
@@ -1003,11 +1003,11 @@
 
   /* Friendly message when data.js has a mistake */
   function showError(err) {
-    const where = err && err.lineno ? `<p>Look at <strong>line ${err.lineno}</strong> of <code>data.js</code> — or the line just above it.</p>` : "";
+    const where = err && err.lineno ? `<p>Look at <strong>line ${err.lineno}</strong> of <code>data.js</code>, or the line just above it.</p>` : "";
     const msg = err && err.message ? `<p><code>${String(err.message).replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" })[c])}</code></p>` : "";
     document.body.innerHTML = `<div class="data-error" role="alert">
       <h1>The portfolio couldn’t load its content</h1>
-      <p>There is probably a small typo in <code>data.js</code> — usually a missing comma, quote or bracket.</p>
+      <p>There is probably a small typo in <code>data.js</code>, usually a missing comma, quote or bracket.</p>
       ${msg}${where}
       <p>Fix it, save the file and refresh this page. Opening the browser console (F12) shows more detail.</p>
     </div>`;

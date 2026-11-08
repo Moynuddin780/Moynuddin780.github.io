@@ -27,13 +27,13 @@
      so the player fits it exactly.
 
    After saving, refresh the browser. If the page shows a red error box,
-   you most likely missed a comma or a quote — the box tells you the line.
+   you most likely missed a comma or a quote, the box tells you the line.
    ========================================================================== */
 
 window.PORTFOLIO = {
 
   /* ------------------------------------------------------------------------
-     SITE — the public address. Run  scripts/set-site-url.sh https://your-address
+     SITE, the public address. Run  scripts/set-site-url.sh https://your-address
      to update the SEO tags, sitemap and robots.txt in one go.
      ------------------------------------------------------------------------ */
   site: {
@@ -41,7 +41,7 @@ window.PORTFOLIO = {
   },
 
   /* ------------------------------------------------------------------------
-     PROFILE — shown in the header, hero, contact and footer
+     PROFILE, shown in the header, hero, contact and footer
      ------------------------------------------------------------------------ */
   profile: {
     name: "Moynuddin Al Masum",
@@ -49,7 +49,7 @@ window.PORTFOLIO = {
     photo: "assets/img/profile.jpg",
     location: "Dhaka, Bangladesh",
     availability: "AI Engineer at SmartData Technologies",   // set to "" to hide the green badge
-    headline: "Building real-time computer-vision systems that run on live camera streams — from model training to deployment on edge NPUs.",
+    headline: "Building real-time computer-vision systems that run on live camera streams, from model training to deployment on edge NPUs.",
     resume: "assets/resume/Moynuddin-Al-Masum-Resume.pdf",
     email: "moinuddinmasum780@gmail.com",
     phone: "+880 1788 277470",                               // set to "" if you don’t want your number public
@@ -75,14 +75,14 @@ window.PORTFOLIO = {
      ------------------------------------------------------------------------ */
   about: {
     paragraphs: [
-      "I’m an AI Engineer (Computer Vision) at **SmartData Technologies**. I build real-time vision systems that run on live camera streams, and I like owning the whole lifecycle — data, model, optimisation and deployment where people actually use it.",
+      "I’m an AI Engineer (Computer Vision) at **SmartData Technologies**. I build real-time vision systems that run on live camera streams, and I like owning the whole lifecycle: data, model, optimisation and deployment where people actually use it.",
       "Since joining as an intern in May 2026 and moving to a full-time role in September, I have built four systems on the **DEEPX DX-M1 NPU** in C++ and Docker: a face-recognition attendance engine for university classrooms, a hall-management platform with face-recognition gates and dining cameras, CCPLC, a bag-counting system for conveyor belts, and Smart Office, a multi-tenant office-analytics platform.",
       "Earlier work spans multi-object tracking and IN/OUT counting from RTSP streams, people-flow analytics, and retrieval-augmented chatbots. Alongside engineering I do applied research in medical AI, including a multi-agent vision-language framework for pediatric pneumonia diagnosis that has been accepted for publication.",
     ],
     facts: [
       { label: "Focus",     value: "Computer Vision · Edge AI · Generative AI" },
       { label: "Now",       value: "AI Engineer (Computer Vision), SmartData Technologies" },
-      { label: "Education", value: "BSc, Information & Communication Engineering — BUP" },
+      { label: "Education", value: "BSc, Information & Communication Engineering, BUP" },
       { label: "Based in",  value: "Dhaka, Bangladesh" },
     ],
   },
@@ -97,9 +97,9 @@ window.PORTFOLIO = {
       company: "SmartData Technologies Limited",
       url: "",
       location: "Dhaka, Bangladesh · Full-time",
-      period: "1 Sep 2026 — Present",
+      period: "1 Sep 2026 to Present",
       points: [
-        "Build and deploy real-time computer-vision systems on the **DEEPX DX-M1 NPU** — face-recognition attendance, hall management, conveyor bag counting and multi-tenant office analytics — using C++, GStreamer (VA-API GPU decoding) and Docker.",
+        "Build and deploy real-time computer-vision systems on the **DEEPX DX-M1 NPU**: face-recognition attendance, hall management, conveyor bag counting and multi-tenant office analytics, using C++, GStreamer (VA-API GPU decoding) and Docker.",
         "Re-engineered the BUP face-attendance pipeline into a C++ NPU engine (rank-1 accuracy **92.8% → 99.0%**, 1.7× throughput, 3.1× less CPU) and built the **BUP Smart Hall**, **CCPLC** and **Smart Office** platforms end to end.",
       ],
       stack: ["C++17 / C++20", "DEEPX DX-M1 NPU", "SCRFD · ArcFace · YOLOv8", "GStreamer", "Docker", "React"],
@@ -110,7 +110,7 @@ window.PORTFOLIO = {
       company: "SmartData Technologies Limited",
       url: "",
       location: "Dhaka, Bangladesh · Internship",
-      period: "1 May 2026 — 30 Aug 2026",
+      period: "1 May 2026 to 30 Aug 2026",
       points: [
         "Completed a 4-month internship in Artificial Intelligence Engineering (computer vision), then continued as a full-time AI Engineer from 1 September 2026.",
       ],
@@ -120,30 +120,30 @@ window.PORTFOLIO = {
   ],
 
   /* ------------------------------------------------------------------------
-     PROJECTS — shown in the order written here (the last card spans the full width when the count is odd).
+     PROJECTS, shown in the order written here (the last card spans the full width when the count is odd).
      id ........... unique, lowercase-with-dashes. Used in shareable links:
                     yoursite.com/#project-<id>   (the résumé links to some of these)
      category ..... the filter buttons are created from these automatically
-     summary ...... 1–2 sentences on the card
+     summary ...... 1-2 sentences on the card
      description .. longer text for the detail view
      highlights ... bullet points for the detail view
      metrics ...... real numbers, shown as tiles
      image ........ cover image shown on the card (when there is no media poster)
      media ........ videos / LinkedIn posts shown beside the text (see top of file)
-     links ........ github / live / paper / … — a value is a URL, or { url, label }
+     links ........ github / live / paper / …, a value is a URL, or { url, label }
      ------------------------------------------------------------------------ */
   projects: [
     {
       id: "bup-attendance",
       title: "Automatic Attendance System for University",
       category: "Computer Vision",
-      year: "2025–26",
-      summary: "Hands-free classroom attendance for Bangladesh University of Professionals — IP-CCTV cameras mark students present automatically, with the per-frame pipeline running as a C++ engine on the DEEPX DX-M1 NPU.",
+      year: "2025-26",
+      summary: "Hands-free classroom attendance for Bangladesh University of Professionals: IP-CCTV cameras mark students present automatically, with the per-frame pipeline running as a C++ engine on the DEEPX DX-M1 NPU.",
       description: "Replaces manual roll-call. Students are enrolled once from photos; running classes are matched live from the classroom cameras, time-in-class is accumulated per student, and teachers and department admins get attendance, absent lists and history without lifting a finger. The demo video shows a live classroom run; the production system is a Flask web app with a C++ recognition engine on the NPU.",
       highlights: [
         "Per-camera C++ engine (pybind11): RTSP capture → SCRFD-10G face detection on the NPU → ArcFace recognition → cosine matching → attendance tracker → live overlay.",
         "Attendance rules: 60 s of presence = Present, a 2 s gap rule per camera, teacher manual override; role-based dashboards for super admin, department admin and teacher, with CSV/JSON export and cloud backup.",
-        "Fixed accuracy bugs in the original pipeline — letterboxing instead of squashing 16:9 frames, SCRFD outputs bound by tensor name, anchor offset, L2-normalised enrollment averaging, Umeyama alignment.",
+        "Fixed accuracy bugs in the original pipeline: letterboxing instead of squashing 16:9 frames, SCRFD outputs bound by tensor name, anchor offset, L2-normalised enrollment averaging, Umeyama alignment.",
         "Reads camera sub-streams (≈10× cheaper to decode) and spreads NPU work over all 3 cores: 1.7× more frames per second per camera at 3.1× less CPU than the Python version.",
         "Ships as a Docker image (gunicorn, healthcheck, restart policy) with a Live Monitor page for every running class; running classes resume by themselves after a crash or reboot.",
       ],
@@ -165,15 +165,15 @@ window.PORTFOLIO = {
     },
     {
       id: "smart-office",
-      title: "Smart Office — AI Office Analytics Platform",
+      title: "Smart Office: AI Office Analytics Platform",
       category: "Computer Vision",
       year: "2026",
-      summary: "A multi-tenant office-analytics platform on the DX-M1 NPU — face-recognition attendance, restricted-zone alerts, fall detection, unauthorised-person detection and desk on-duty monitoring, with Telegram and e-mail alerts that carry the photo.",
-      description: "Built like a SaaS product: the vendor provisions client companies, each company manages its own cameras, employees and reports, and no company can see another's data. Three models run in one C++ binary across all three NPU cores, five modules decide what happened, and the system says so when it cannot decide — for example when a camera is too far away to identify anybody.",
+      summary: "A multi-tenant office-analytics platform on the DX-M1 NPU: face-recognition attendance, restricted-zone alerts, fall detection, unauthorised-person detection and desk on-duty monitoring, with Telegram and e-mail alerts that carry the photo.",
+      description: "Built like a SaaS product: the vendor provisions client companies, each company manages its own cameras, employees and reports, and no company can see another's data. Three models run in one C++ binary across all three NPU cores, five modules decide what happened, and the system says so when it cannot decide, for example when a camera is too far away to identify anybody.",
       highlights: [
-        "**Five AI modules on one pipeline:** Attendance (first in, last out, every in / out pair, time inside, breaks, late / early / absent), Perimeter zones, Fall detection from 17 keypoints, Unauthorised person and Desk on-duty — fed by YOLO26-pose, SCRFD-10G and ArcFace MobileFaceNet.",
-        "**Measured, not assumed:** `NPU_ALL` does not spread one engine over three cores, so every model is loaded once per core and jobs go round-robin — 71.8 → 186.4 inferences/s (**2.6×**). Software decode beat the board's hardware decoder by **33×** (223.5 vs 6.7 fps on a 640×360 sub-stream), and scaling before colour conversion took 1080p from 27.3 to 66.7 fps.",
-        "**Alerts that carry the picture:** Telegram photos and e-mail with the image attached, sent through a retrying outbox — never text alone.",
+        "**Five AI modules on one pipeline:** Attendance (first in, last out, every in / out pair, time inside, breaks, late / early / absent), Perimeter zones, Fall detection from 17 keypoints, Unauthorised person and Desk on-duty, fed by YOLO26-pose, SCRFD-10G and ArcFace MobileFaceNet.",
+        "**Measured, not assumed:** `NPU_ALL` does not spread one engine over three cores, so every model is loaded once per core and jobs go round-robin: 71.8 → 186.4 inferences/s (**2.6×**). Software decode beat the board's hardware decoder by **33×** (223.5 vs 6.7 fps on a 640×360 sub-stream), and scaling before colour conversion took 1080p from 27.3 to 66.7 fps.",
+        "**Alerts that carry the picture:** Telegram photos and e-mail with the image attached, sent through a retrying outbox, never text alone.",
         "**A face registry that checks itself:** one vector per person recomputed from every photo, with coherence and quality scores, duplicate-profile warnings and a guided 20-pose capture.",
         "**Multi-tenant security:** the tenant comes from the token, repositories take the tenant id as a mandatory first parameter (a forgotten filter does not compile), a SuperAdmin cannot browse inside a tenant, passwords use PBKDF2-HMAC-SHA512 at 210,000 iterations.",
         "**Production packaging:** Drogon API and a React + TypeScript dashboard with PostgreSQL behind nginx in Docker Compose; the image carries no NPU driver. 143 tests (1,887 assertions) run inside `docker build` and on the hardware.",
@@ -196,11 +196,11 @@ window.PORTFOLIO = {
       title: "Smart Hall Management System",
       category: "Computer Vision",
       year: "2026",
-      summary: "One C++ server that runs a university residential hall — face-recognition gate and dining cameras on the DX-M1 NPU, meal planning, kitchen and meal counter, complaints, notices and automatic monthly meal bills.",
-      description: "Built for the residential halls of Bangladesh University of Professionals. Students plan meals from their own portal, the kitchen sees the final count, distributors serve by Meal ID, and the hall office gets gate movement logs, alerts and bills — all from a single C++20 process deployed as a Docker container.",
+      summary: "One C++ server that runs a university residential hall: face-recognition gate and dining cameras on the DX-M1 NPU, meal planning, kitchen and meal counter, complaints, notices and automatic monthly meal bills.",
+      description: "Built for the residential halls of Bangladesh University of Professionals. Students plan meals from their own portal, the kitchen sees the final count, distributors serve by Meal ID, and the hall office gets gate movement logs, alerts and bills, all from a single C++20 process deployed as a Docker container.",
       highlights: [
         "**Smart Gate:** entry/exit cameras recognise students, save IN/OUT movement instantly, show who is inside, raise late-night alerts and export CSV.",
-        "**Dining:** face-recognition dining cameras record who came to eat — or came without a meal switched on — next to served / absent / extra attendance reports and live meal counts.",
+        "**Dining:** face-recognition dining cameras record who came to eat, or came without a meal switched on, next to served / absent / extra attendance reports and live meal counts.",
         "**Meal workflow:** students switch breakfast / lunch / dinner on or off until the 2:00 AM lock; the kitchen board shows how many meals to cook; the counter marks meals served by Meal ID with live ON / served / remaining / extra counts.",
         "**Hall office:** complaints (Pending → In process → Solved), notice board with PDF/image attachments, weekly food routine, and meal-rate and monthly-bill calculation with payments and dues.",
         "**Face pipeline:** SCRFD-10G detection → ByteTrack → ArcFace (w600k_r50, INT8) on the NPU. Tracking means 120 detections/s over 12 cameras needed only 22 ArcFace runs/s.",
@@ -221,10 +221,10 @@ window.PORTFOLIO = {
     },
     {
       id: "ccplc",
-      title: "CCPLC — AIoT Cement Bag Counting System",
+      title: "CCPLC: AIoT Cement Bag Counting System",
       category: "Computer Vision",
       year: "2026",
-      summary: "Counts cement bags on any number of conveyor belts from IP cameras, in real time on the DX-M1 NPU — and turns the counts into loading sessions, shift reports and LED displays.",
+      summary: "Counts cement bags on any number of conveyor belts from IP cameras, in real time on the DX-M1 NPU, and turns the counts into loading sessions, shift reports and LED displays.",
       description: "Camera streams are decoded at the edge, every frame goes through a YOLOv8s model on all three NPU cores, bags are tracked and counted when they enter an operator-drawn 3-D zone standing on the belt, and the counts are booked into loading sessions (vessel, shipment, PCC/OPC targets). Operators run everything from a React control-room dashboard; counting carries on even when no browser is open.",
       highlights: [
         "**C++17 backend:** GStreamer / VA-API GPU decoding with an FFmpeg fallback, asynchronous NPU inference, tracker, 3-D counting zone and sessions that survive restarts.",
@@ -236,7 +236,7 @@ window.PORTFOLIO = {
       ],
       metrics: [
         { value: "197 fps",   label: "NPU capacity for the YOLOv8s model" },
-        { value: "0 dropped", label: "frames, 4 live cameras at 20–25 fps" },
+        { value: "0 dropped", label: "frames, 4 live cameras at 20-25 fps" },
         { value: "109 / 109", label: "bags counted identically, GPU vs CPU decode" },
         { value: "~5×",       label: "less CPU on a sub-stream than a 2.5K main stream" },
       ],
@@ -252,8 +252,8 @@ window.PORTFOLIO = {
       title: "Real-time Object Detection & Smart Counting",
       category: "Computer Vision",
       year: "2026",
-      summary: "Live video analytics on IP-CCTV streams — detects students and multiple vehicle types, tracks each one with a stable ID and counts IN/OUT movement in both directions.",
-      description: "A production-oriented video analytics system that reads RTSP streams from IP-CCTV cameras, detects and tracks objects in real time, and keeps bidirectional IN/OUT counts — built for continuous, unattended monitoring.",
+      summary: "Live video analytics on IP-CCTV streams: detects students and multiple vehicle types, tracks each one with a stable ID and counts IN/OUT movement in both directions.",
+      description: "A production-oriented video analytics system that reads RTSP streams from IP-CCTV cameras, detects and tracks objects in real time, and keeps bidirectional IN/OUT counts, built for continuous, unattended monitoring.",
       highlights: [
         "Ingests live RTSP streams from IP-CCTV cameras for continuous monitoring.",
         "Custom-trained YOLOv8 model detects students and multiple vehicle classes.",
@@ -276,7 +276,7 @@ window.PORTFOLIO = {
       title: "BUP RAG Chatbot",
       category: "Generative AI",
       year: "2025",
-      summary: "A retrieval-augmented FAQ assistant for Bangladesh University of Professionals that answers questions accurately — in the language they were asked.",
+      summary: "A retrieval-augmented FAQ assistant for Bangladesh University of Professionals that answers questions accurately, in the language they were asked.",
       description: "Instead of letting an LLM guess, the chatbot first retrieves the most relevant official FAQs and then asks the model to answer from that context, keeping answers grounded and up to date.",
       highlights: [
         "Semantic search over university FAQs with SentenceTransformer embeddings and a FAISS index.",
@@ -302,7 +302,7 @@ window.PORTFOLIO = {
       summary: "Generates structured, professional LinkedIn posts on any topic in English, Bengali or Spanish through a simple web interface.",
       description: "A small LangChain application: pick a topic, a length and a language, and get a post that is ready to publish.",
       highlights: [
-        "LangChain prompt pipeline on OpenAI GPT-4o-mini produces consistently structured 2–4 paragraph posts.",
+        "LangChain prompt pipeline on OpenAI GPT-4o-mini produces consistently structured 2-4 paragraph posts.",
         "Multi-language output (English, Bengali, Spanish) that is easy to extend.",
         "Gradio web UI, with API keys kept out of code via environment variables.",
       ],
@@ -344,7 +344,7 @@ window.PORTFOLIO = {
   ],
 
   /* ------------------------------------------------------------------------
-     EXPLAINER — a longer video with the idea written out next to it (its own section).
+     EXPLAINER, a longer video with the idea written out next to it (its own section).
      video: src + poster (+ label, duration). Leave the list empty [] to hide the section.
      ------------------------------------------------------------------------ */
   explainers: [
@@ -352,7 +352,7 @@ window.PORTFOLIO = {
       id: "tracking-memorization",
       kicker: "Multi-object tracking",
       title: "Object detection with *memorization*",
-      summary: "A detector only sees one frame at a time. To know that the person in frame 2 is the same person as in frame 1, the tracker has to remember each object — where it was, how fast it was moving and how big it is — and predict where it should appear next. This video walks through that idea with a worked example.",
+      summary: "A detector only sees one frame at a time. To know that the person in frame 2 is the same person as in frame 1, the tracker has to remember each object: where it was, how fast it was moving and how big it is, and predict where it should appear next. This video walks through that idea with a worked example.",
       video: {
         src: "assets/video/tracking-memorization.mp4",
         poster: "assets/img/explainer-tracking.jpg",
@@ -361,18 +361,18 @@ window.PORTFOLIO = {
         ratio: "1116 / 606",
       },
       steps: [
-        { title: "Frame 1 — a track is born", text: "YOLO detects person A with confidence 0.85, above the 0.25 threshold, so a new track (P1) is created. The Kalman filter memorises its state: centre (125, 275), speed (0, 0), size 50 × 150." },
-        { title: "Before Frame 2 — predict", text: "From what it remembers, the Kalman filter predicts where P1’s box should be in the next frame: [100, 200, 150, 350]." },
-        { title: "Frame 2 — detect, then match", text: "YOLO returns several boxes. Each is compared with the predicted box using **IoU** (overlap ÷ union). Box A overlaps 2000 / 2500 = **0.80**, so it keeps ID P1. Box B overlaps only 300 / 1500 = **0.20**, so it cannot be P1 and gets a new ID, P2 (confidence 0.75 > 0.25). Box C (confidence 0.20) is below the threshold and does not start a track." },
-        { title: "Before Frame 3 — update the memory", text: "The filter blends its prediction with the actual detection for every track: A’s position becomes (127.5, 277.5) with speed (5, 5), so its next box is predicted further along its path; B, which has not moved, stays where it is." },
-        { title: "Frame 3 — repeat", text: "YOLO now sees A to E. The same predict → match → update loop runs on every frame, which is what keeps each person’s ID stable as they move." },
+        { title: "Frame 1: a track is born", text: "YOLO detects person A with confidence 0.85, above the 0.25 threshold, so a new track (P1) is created. The Kalman filter memorises its state: centre (125, 275), speed (0, 0), size 50 × 150." },
+        { title: "Before Frame 2: predict", text: "From what it remembers, the Kalman filter predicts where P1’s box should be in the next frame: [100, 200, 150, 350]." },
+        { title: "Frame 2: detect, then match", text: "YOLO returns several boxes. Each is compared with the predicted box using **IoU** (overlap ÷ union). Box A overlaps 2000 / 2500 = **0.80**, so it keeps ID P1. Box B overlaps only 300 / 1500 = **0.20**, so it cannot be P1 and gets a new ID, P2 (confidence 0.75 > 0.25). Box C (confidence 0.20) is below the threshold and does not start a track." },
+        { title: "Before Frame 3: update the memory", text: "The filter blends its prediction with the actual detection for every track: A’s position becomes (127.5, 277.5) with speed (5, 5), so its next box is predicted further along its path; B, which has not moved, stays where it is." },
+        { title: "Frame 3: repeat", text: "YOLO now sees A to E. The same predict → match → update loop runs on every frame, which is what keeps each person’s ID stable as they move." },
       ],
       note: "The same predict → match → update loop sits underneath the ByteTrack tracker used in [Smart Counting](#project-smart-counting) and [Smart Hall](#project-smart-hall).",
       tags: ["YOLO detection", "Kalman filter", "IoU matching", "Track IDs", "ByteTrack"],
     },
   ],
 
-  /* Smaller experiments — shown as a compact list under the projects. */
+  /* Smaller experiments, shown as a compact list under the projects. */
   moreWork: [
     { title: "Heart Disease Prediction API", description: "Random-forest model served with FastAPI, containerised with Docker and deployed on Render.", tags: ["FastAPI", "Docker", "Scikit-learn"], url: "https://github.com/Moynuddin780/FastAPI-Docker-Deployment-Heart-Disease-Prediction-" },
     { title: "Sentiment Analysis: TF-IDF vs Word2Vec vs BERT", description: "Compares three text representations for review sentiment classification.", tags: ["NLP", "BERT", "Scikit-learn"], url: "https://github.com/Moynuddin780/Sentiment-Analysis-on-Product-Reviews" },
@@ -411,7 +411,7 @@ window.PORTFOLIO = {
   ],
 
   /* ------------------------------------------------------------------------
-     EXPERTISE — each group becomes a card
+     EXPERTISE, each group becomes a card
      ------------------------------------------------------------------------ */
   skills: [
     {
@@ -453,14 +453,14 @@ window.PORTFOLIO = {
     {
       school: "Bangladesh University of Professionals",
       degree: "BSc in Information & Communication Engineering",
-      period: "2021 — 2026",
+      period: "2021 to 2026",
       location: "Dhaka, Bangladesh",
       details: "",
     },
   ],
 
   /* ------------------------------------------------------------------------
-     CERTIFICATIONS — the id is the link anchor:  yoursite.com/#internship-certificate
+     CERTIFICATIONS, the id is the link anchor:  yoursite.com/#internship-certificate
      file = the PDF to open / download, preview = the image shown in the viewer
      ------------------------------------------------------------------------ */
   certifications: [
@@ -476,7 +476,7 @@ window.PORTFOLIO = {
   ],
 
   /* ------------------------------------------------------------------------
-     AWARDS & ACHIEVEMENTS — hidden while empty.
+     AWARDS & ACHIEVEMENTS, hidden while empty.
      ------------------------------------------------------------------------ */
   awards: [],
 
