@@ -80,6 +80,7 @@
     slides: ["Slides", "paper"],
     linkedin: ["LinkedIn post", "linkedin"],
     certificate: ["View certificate", "paper"],
+    dataset: ["View dataset", "arrowUpRight"],
   };
   const linkMeta = (key) => {
     const m = LINKS[key];
@@ -109,6 +110,8 @@
       explainerIntro: "A walk-through I recorded on how a tracker remembers what it has seen, so the same person keeps the same ID from one frame to the next.",
       research: "Research & *publications*.",
       researchIntro: "Applied AI research, with a focus on healthcare.",
+      datasets: "Open *datasets*.",
+      datasetsIntro: "Datasets I annotated for detection work. The public one is free to download and reuse.",
       expertise: "The *toolkit*.",
       expertiseIntro: "Frameworks and tools I use to take models from idea to production.",
       education: "Education & *certificates*.",
@@ -439,6 +442,37 @@
               ${venue ? `<p class="pub__venue">${esc(venue)}</p>` : ""}
               ${has(p.summary) ? `<p class="pub__summary">${md(p.summary)}</p>` : ""}
               <div class="pub__foot">${tags(p.tags)}${linkButtons(p.links, true)}</div>
+            </div>
+          </li>`;
+        })
+        .join("")}</ol>`,
+    };
+  }
+
+  /* Datasets: same layout as publications, plus number tiles */
+  function buildDatasets() {
+    const items = list(D.datasets).filter((d) => d && has(d.title));
+    if (!items.length) return null;
+    return {
+      title: md(H.datasets),
+      intro: md(H.datasetsIntro),
+      body: `<ol class="pubs">${items
+        .map((d, i) => {
+          const solid = /public/i.test(d.status || "");
+          const metrics = list(d.metrics).filter((m) => m && has(m.value));
+          return `<li class="pub dataset" data-reveal>
+            <div class="pub__side">
+              <span class="pub__num">${pad(i + 1)}</span>
+              ${has(d.status) ? `<span class="badge ${solid ? "badge--solid" : "badge--outline"}">${esc(d.status)}</span>` : ""}
+            </div>
+            <div class="pub__main">
+              <h3 class="pub__title">${esc(d.title)}</h3>
+              ${has(d.where) ? `<p class="pub__venue">${esc(d.where)}</p>` : ""}
+              ${has(d.summary) ? `<p class="pub__summary">${md(d.summary)}</p>` : ""}
+              ${metrics.length ? `<dl class="metrics dataset__metrics">${metrics
+                .map((m) => `<div class="metric"><dt class="metric__label">${esc(m.label)}</dt><dd class="metric__value">${esc(m.value)}</dd></div>`)
+                .join("")}</dl>` : ""}
+              <div class="pub__foot">${tags(d.tags)}${linkButtons(d.links, true)}</div>
             </div>
           </li>`;
         })
@@ -941,10 +975,28 @@
       alumniOf: list(D.education).map((e) => ({ "@type": "CollegeOrUniversity", name: e.school })),
       knowsAbout: list(D.skills).flatMap((g) => list(g.items)),
     };
-    const s = document.createElement("script");
-    s.type = "application/ld+json";
-    s.textContent = JSON.stringify(ld);
-    document.head.appendChild(s);
+    // Public datasets as schema.org/Dataset, so Google Dataset Search can list them
+    const plain = (t) => String(t || "").replace(/\*\*|\*/g, "").replace(/\[([^\]]+)\]\([^)]+\)/g, "$1");
+    const sets = list(D.datasets)
+      .filter((d) => d && has(d.license) && d.links && has(linkUrl(d.links.dataset)))
+      .map((d) => ({
+        "@context": "https://schema.org",
+        "@type": "Dataset",
+        name: d.title,
+        description: plain(d.summary),
+        url: linkUrl(d.links.dataset),
+        license: d.license,
+        isAccessibleForFree: true,
+        keywords: list(d.tags),
+        creator: { "@type": "Person", name: P.name, url: ld.url },
+        variableMeasured: list(d.metrics).map((m) => `${m.label}: ${m.value}`),
+      }));
+    [ld, ...sets].forEach((obj) => {
+      const s = document.createElement("script");
+      s.type = "application/ld+json";
+      s.textContent = JSON.stringify(obj);
+      document.head.appendChild(s);
+    });
   }
 
   /* ======================================================================
@@ -957,6 +1009,7 @@
       { id: "work", nav: "Work", eyebrow: "Projects", build: buildWork },
       { id: "explainer", nav: "Explainer", eyebrow: "Explainer", build: buildExplainer },
       { id: "research", nav: "Research", eyebrow: "Research", build: buildResearch },
+      { id: "datasets", nav: "Datasets", eyebrow: "Datasets", build: buildDatasets },
       { id: "expertise", nav: "Expertise", eyebrow: "Expertise", build: buildExpertise },
       { id: "education", nav: null, eyebrow: "Education", build: buildEducation },
       { id: "contact", nav: "Contact", eyebrow: "Contact", build: buildContact },

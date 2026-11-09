@@ -176,7 +176,7 @@ strong { font-weight: 550; color: var(--ink); }
   transition: background 0.3s, color 0.3s, border-color 0.3s;
 }
 .brand:hover .brand__mark { background: var(--ink); border-color: var(--ink); color: var(--bg); }
-.brand__name { font-size: 15px; font-weight: 500; letter-spacing: -0.01em; }
+.brand__name { font-size: 15px; font-weight: 500; letter-spacing: -0.01em; white-space: nowrap; }
 
 .nav__list { display: flex; gap: 2px; }
 .nav__link {
@@ -189,7 +189,7 @@ strong { font-weight: 550; color: var(--ink); }
 .header__actions { display: flex; align-items: center; gap: 8px; }
 .menu-toggle { display: none; }
 
-@media (max-width: 1080px) {
+@media (max-width: 1180px) {
   .menu-toggle { display: inline-grid; }
   .nav {
     position: absolute; top: 100%; left: 0; right: 0;
@@ -533,6 +533,12 @@ a.more__item:hover .more__icon { color: var(--accent); transform: translate(2px,
 .pub__venue { margin-top: 4px; font-style: italic; color: var(--muted); }
 .pub__summary { max-width: 46em; margin-top: 12px; }
 .pub__foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; margin-top: 20px; }
+.dataset .pub__main { min-width: 0; }
+.dataset__metrics { max-width: 46em; margin-top: 18px; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); }
+.dataset__metrics .metric { padding: 14px 16px; }
+.dataset__metrics .metric__value { font-size: 22px; }
+.dataset__metrics .metric:last-child:nth-child(odd) { grid-column: auto; }
+@media (max-width: 560px) { .dataset__metrics .metric:last-child:nth-child(odd) { grid-column: 1 / -1; } }
 @media (max-width: 760px) {
   .pub { grid-template-columns: 1fr; gap: 14px; }
   .pub__side { flex-direction: row; align-items: center; padding-top: 0; }

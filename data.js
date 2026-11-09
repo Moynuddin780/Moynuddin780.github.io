@@ -411,6 +411,44 @@ window.PORTFOLIO = {
   ],
 
   /* ------------------------------------------------------------------------
+     DATASETS I annotated. status = the badge, where = the line under the title,
+     metrics = number tiles, links: { dataset: { url, label } } adds a button.
+     A dataset without links is shown as a contribution only.
+     ------------------------------------------------------------------------ */
+  datasets: [
+    {
+      title: "Animal Detection: 15 Classes",
+      status: "Public · CC BY 4.0",
+      where: "Roboflow Universe",
+      summary: "An object-detection dataset of 15 farm, domestic and wild animals that I annotated and published for anyone to use: **bird, boar, buffalo, cat, chicken, cow, crocodile, deer, dog, duck, elephant, goat, horse, monkey and pigeon**. Classes are balanced at about 500 images each, and a fixed train / valid / test split lets different models be compared on the same test set. It exports to YOLO, COCO, Pascal VOC and other formats.",
+      metrics: [
+        { label: "Images", value: "7,499" },
+        { label: "Bounding boxes", value: "14,996" },
+        { label: "Classes", value: "15" },
+        { label: "Train / valid / test", value: "70 / 20 / 10" },
+      ],
+      tags: ["Object detection", "Bounding boxes", "Roboflow", "Open data"],
+      license: "https://creativecommons.org/licenses/by/4.0/",   // public datasets with a license also go into Google Dataset Search
+      links: {
+        dataset: { url: "https://universe.roboflow.com/ostadproject5people-flow-detection-using-object-tracking-heatmap-visualization/animal-detection-15-classes", label: "View on Roboflow Universe" },
+      },
+    },
+    {
+      title: "Bangladeshi Vehicle Detection Dataset",
+      status: "Team project",
+      where: "Annotated with two teammates · private",
+      summary: "With two teammates I collected Bangladeshi road images and annotated them for local vehicles that general-purpose datasets miss: **CNG** auto-rickshaws, **leguna**, **easybikes**, **rickshaws**, **horse carts** and river **launches**, alongside cars, buses, trucks, bikes and people. I merged our three separately labelled datasets into one shared Roboflow project with a single 19-class schema and a label → review → accept workflow, and used Gemini auto-labelling to pre-label the remaining images for human review.",
+      metrics: [
+        { label: "Images", value: "5,925" },
+        { label: "Vehicle classes", value: "19" },
+        { label: "Annotators", value: "3" },
+      ],
+      tags: ["Object detection", "Bangladeshi vehicles", "Roboflow", "Gemini auto-labelling"],
+      links: {},
+    },
+  ],
+
+  /* ------------------------------------------------------------------------
      EXPERTISE, each group becomes a card
      ------------------------------------------------------------------------ */
   skills: [
