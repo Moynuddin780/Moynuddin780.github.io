@@ -352,13 +352,13 @@ window.PORTFOLIO = {
       id: "tracking-memorization",
       kicker: "Multi-object tracking",
       title: "Object detection with *memorization*",
-      summary: "A detector only sees one frame at a time. To know that the person in frame 2 is the same person as in frame 1, the tracker has to remember each object: where it was, how fast it was moving and how big it is, and predict where it should appear next. This video walks through that idea with a worked example.",
+      summary: "A detector only sees one frame at a time. To know that the person in frame 2 is the same person as in frame 1, the tracker has to remember each object: where it was, how fast it was moving and how big it is, and predict where it should appear next. The video opens with the counting system running on a live campus CCTV feed, then walks through the idea step by step with a worked example.",
       video: {
         src: "assets/video/tracking-memorization.mp4",
         poster: "assets/img/explainer-tracking.jpg",
         label: "Walk-through video",
-        duration: "10 min",
-        ratio: "1116 / 606",
+        duration: "11 min",
+        ratio: "1280 / 722",
       },
       steps: [
         { title: "Frame 1: a track is born", text: "YOLO detects person A with confidence 0.85, above the 0.25 threshold, so a new track (P1) is created. The Kalman filter memorises its state: centre (125, 275), speed (0, 0), size 50 × 150." },
